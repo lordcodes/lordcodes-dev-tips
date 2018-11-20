@@ -8,13 +8,47 @@ If you like what I am sharing, please don't hesitate to follow me [on Twitter](h
 
 ## Swift Table of Contents
 
+[#4 Sharing accessibility identifiers between app and tests](https://github.com/lordcodes/lordcodes-dev-tips#4-sharing-accessibility-identifiers-between-app-and-tests)
+
 [#3 Protocol function that returns the Self type](https://github.com/lordcodes/lordcodes-dev-tips#3-protocol-function-that-returns-the-self-type)
 
 [#2 Using metatype Self to return current type](https://github.com/lordcodes/lordcodes-dev-tips#2-using-metatype-self-to-return-current-type)
 
 [#1 Child view controller constraints within a subview](https://github.com/lordcodes/lordcodes-dev-tips#1-child-view-controller-constraints-within-a-subview)
 
-## Tip List
+## Swift Tip List
+
+### [#4 Sharing accessibility identifiers between app and tests](https://twitter.com/lordcodes/status/1063420452121583616)
+*16/11/2018*
+
+[Twitter](https://twitter.com/lordcodes/status/1063420452121583616)
+
+Through an extension you can use an enum for your view accessibility identifiers. By adding the enum to the app target and the UI test target, you can also avoid duplicating strings. Its nice to use an enum rather than strings, but also good for avoiding errors! 🔍
+
+```swift
+// App sources
+extension UIAccessibilityIdentification {
+  var viewAccessibilityIdentifier: ViewAccessibilityIdentifier? {
+    get { fatalError("Not implemented") }
+    set {
+      accessibilityIdentifier = newValue?.rawValue
+    }
+  }
+}
+
+addContactButton.viewAccessibilityIdentifier = .addContactButton
+
+// Test sources
+extension XCUIElementQuery {
+  subscript(key: ViewAccessibilityIdentifier) -> XCUIElement {
+    return self[key.rawValue]
+  }
+}
+
+XCUIApplication().buttons[.addContactButton].tap()
+```
+
+[Return to top](https://github.com/lordcodes/lordcodes-dev-tips#lordcodes-development-tips-)
 
 ### [#3 Protocol function that returns the Self type](https://twitter.com/lordcodes/status/1062014660893913088)
 *12/11/2018*
