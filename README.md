@@ -38,6 +38,8 @@ extension ConnectionThreadsRobot: ChatThreadsRobot {
 }
 ```
 
+[Return to top](https://github.com/lordcodes/lordcodes-dev-tips#lordcodes-development-tips-)
+
 ### [#2 Using metatype Self to return current type](https://twitter.com/lordcodes/status/1060837630953316352)
 *9/11/2018*
 
@@ -56,6 +58,8 @@ class ThreadRobot<CallerT: CallerRobot> {
 }
 ```
 
+[Return to top](https://github.com/lordcodes/lordcodes-dev-tips#lordcodes-development-tips-)
+
 ### [#1 Child view controller constraints within a subview](https://twitter.com/lordcodes/status/1054770192386064384)
 *23/10/2018*
 
@@ -70,3 +74,5 @@ child.view.translatesAutoresizingMaskIntoConstraints = false
 child.view.attachAnchors(to: containerView)
 child.didMove(toParent: self)
 ```
+
+[Return to top](https://github.com/lordcodes/lordcodes-dev-tips#lordcodes-development-tips-)
