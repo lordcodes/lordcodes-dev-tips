@@ -1,5 +1,8 @@
 # Lordcodes Development Tips 😎
 
+[![License](https://img.shields.io/badge/license-Apache%202.0-green.svg)](https://github.com/lordcodes/lordcodes-dev-tips/blob/master/LICENSE)
+[![@lordcodes](https://img.shields.io/badge/contact-@lordcodes-blue.svg?style=flat)](https://twitter.com/lordcodes)
+
 I love writing code and I am always trying out new ideas and discovering interesting ways of solving problems. My main focuses are on Android and iOS development, using Kotlin and Swift. To help find the tips and tricks, I will keep them all collected here, grouped by language.
 
 Each tip will include links back to where it was originally shared [on Twitter](https://twitter.com/lordcodes) and sometimes Reddit. If you have any thoughts or questions on any I have shared, then please reach out to me there. I am always looking to learn so would love to discuss any better or alternative ways of doing things.
@@ -110,3 +113,13 @@ child.didMove(toParent: self)
 ```
 
 [Return to top](https://github.com/lordcodes/lordcodes-dev-tips#lordcodes-development-tips-)
+
+## Contributing
+
+If you have any questions, thoughts or feedback on my tips, articles or code samples, then please let me know [on Twitter](https://twitter.com/@lordcodes)!
+
+If you notice any typing mistakes or errors in the code snippets, then please feel free to let me know with a PR.
+
+## Author
+
+Andrew Lord [@lordcodes](https://twitter.com/@lordcodes)
