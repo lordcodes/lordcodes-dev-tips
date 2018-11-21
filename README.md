@@ -24,7 +24,6 @@ If you like what I am sharing, please don't hesitate to follow me [on Twitter](h
 ## Swift Tip List
 
 ### [#5 Access the call site using Swift special literals](https://twitter.com/lordcodes/status/1065359850262147072)
-*21/11/2018*
 
 [Twitter](https://twitter.com/lordcodes/status/1065359850262147072)
 
@@ -48,7 +47,6 @@ extension  XCTestCase {
 [Return to top](https://github.com/lordcodes/lordcodes-dev-tips#lordcodes-development-tips-)
 
 ### [#4 Sharing accessibility identifiers between app and tests](https://twitter.com/lordcodes/status/1063420452121583616)
-*16/11/2018*
 
 [Twitter](https://twitter.com/lordcodes/status/1063420452121583616)
 
@@ -80,7 +78,6 @@ XCUIApplication().buttons[.addContactButton].tap()
 [Return to top](https://github.com/lordcodes/lordcodes-dev-tips#lordcodes-development-tips-)
 
 ### [#3 Protocol function that returns the Self type](https://twitter.com/lordcodes/status/1062014660893913088)
-*12/11/2018*
 
 [Twitter](https://twitter.com/lordcodes/status/1062014660893913088)
 
@@ -104,7 +101,6 @@ extension ConnectionThreadsRobot: ChatThreadsRobot {
 [Return to top](https://github.com/lordcodes/lordcodes-dev-tips#lordcodes-development-tips-)
 
 ### [#2 Using metatype Self to return current type](https://twitter.com/lordcodes/status/1060837630953316352)
-*9/11/2018*
 
 [Twitter](https://twitter.com/lordcodes/status/1060837630953316352)
 
@@ -124,7 +120,6 @@ class ThreadRobot<CallerT: CallerRobot> {
 [Return to top](https://github.com/lordcodes/lordcodes-dev-tips#lordcodes-development-tips-)
 
 ### [#1 Child view controller constraints within a subview](https://twitter.com/lordcodes/status/1054770192386064384)
-*23/10/2018*
 
 [Twitter](https://twitter.com/lordcodes/status/1054770192386064384)
 
