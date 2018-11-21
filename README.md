@@ -11,6 +11,8 @@ If you like what I am sharing, please don't hesitate to follow me [on Twitter](h
 
 ## Swift Table of Contents
 
+[#5 Access the call site using Swift special literals](https://github.com/lordcodes/lordcodes-dev-tips#5-access-the-call-site-using-swift-special-literals)
+
 [#4 Sharing accessibility identifiers between app and tests](https://github.com/lordcodes/lordcodes-dev-tips#4-sharing-accessibility-identifiers-between-app-and-tests)
 
 [#3 Protocol function that returns the Self type](https://github.com/lordcodes/lordcodes-dev-tips#3-protocol-function-that-returns-the-self-type)
@@ -20,6 +22,30 @@ If you like what I am sharing, please don't hesitate to follow me [on Twitter](h
 [#1 Child view controller constraints within a subview](https://github.com/lordcodes/lordcodes-dev-tips#1-child-view-controller-constraints-within-a-subview)
 
 ## Swift Tip List
+
+### [#5 Access the call site using Swift special literals](https://twitter.com/lordcodes/status/1065359850262147072)
+*21/11/2018*
+
+[Twitter](https://twitter.com/lordcodes/status/1065359850262147072)
+
+Accessing the call site of a function is surprising simple in Swift, using the special literals: #file, #function and #line. This can be a great help when you want to put assertions within a shared function or print without losing the original context. 🙌
+
+```swift
+extension  XCTestCase {
+ struct UnexpectedNilError: Error {}
+
+ func unwrapAssert<ValueT>(_ value: ValueT?, message: String = "Unexpected nil", 
+                           file: StaticString = #file, line: UInt = #line) throws -> ValueT {
+   guard let value = value else {
+     XCTFail(message, file: file, line: line)
+     throw  UnexpectedNilError()
+   }
+   return value
+ }
+}
+```
+
+[Return to top](https://github.com/lordcodes/lordcodes-dev-tips#lordcodes-development-tips-)
 
 ### [#4 Sharing accessibility identifiers between app and tests](https://twitter.com/lordcodes/status/1063420452121583616)
 *16/11/2018*
