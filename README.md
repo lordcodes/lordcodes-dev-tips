@@ -11,6 +11,8 @@ If you like what I am sharing, please don't hesitate to follow me [on Twitter](h
 
 ## Swift Table of Contents
 
+[#6 Safely index items within a collection](https://github.com/lordcodes/lordcodes-dev-tips#6-safely-index-items-within-a-collection)
+
 [#5 Access the call site using Swift special literals](https://github.com/lordcodes/lordcodes-dev-tips#5-access-the-call-site-using-swift-special-literals)
 
 [#4 Sharing accessibility identifiers between app and tests](https://github.com/lordcodes/lordcodes-dev-tips#4-sharing-accessibility-identifiers-between-app-and-tests)
@@ -22,6 +24,26 @@ If you like what I am sharing, please don't hesitate to follow me [on Twitter](h
 [#1 Child view controller constraints within a subview](https://github.com/lordcodes/lordcodes-dev-tips#1-child-view-controller-constraints-within-a-subview)
 
 ## Swift Tip List
+
+### [#6 Safely index items within a collection](https://twitter.com/lordcodes/status/1066755201728684032)
+
+[Twitter](https://twitter.com/lordcodes/status/1066755201728684032)
+
+You can make some great things with extensions in Swift, even subscript functions. This one allows you to safely access collection elements by index, getting back an optional instead of errors being thrown! Nice 😎.
+
+```swift
+extension Collection {
+  subscript(safe index: Index) -> Element? {
+    return indices.contains(index) ? self[index] : nil
+  }
+}
+
+let numbers = [1, 2, 3, 4]
+numbers[safe: 3] // 4
+numbers[safe: 10] // nil, no error
+```
+
+[Return to top](https://github.com/lordcodes/lordcodes-dev-tips#lordcodes-development-tips-)
 
 ### [#5 Access the call site using Swift special literals](https://twitter.com/lordcodes/status/1065359850262147072)
 
