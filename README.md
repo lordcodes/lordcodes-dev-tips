@@ -11,6 +11,8 @@ If you like what I am sharing, please don't hesitate to follow me [on Twitter](h
 
 ## Swift Table of Contents
 
+[#7 Protocol function with default values](https://github.com/lordcodes/lordcodes-dev-tips#7-protocol-function-with-default-values)
+
 [#6 Safely index items within a collection](https://github.com/lordcodes/lordcodes-dev-tips#6-safely-index-items-within-a-collection)
 
 [#5 Access the call site using Swift special literals](https://github.com/lordcodes/lordcodes-dev-tips#5-access-the-call-site-using-swift-special-literals)
@@ -24,6 +26,35 @@ If you like what I am sharing, please don't hesitate to follow me [on Twitter](h
 [#1 Child view controller constraints within a subview](https://github.com/lordcodes/lordcodes-dev-tips#1-child-view-controller-constraints-within-a-subview)
 
 ## Swift Tip List
+
+### [#7 Protocol function with default values](https://twitter.com/lordcodes/status/1067062379454885889)
+
+[Twitter](https://twitter.com/lordcodes/status/1067062379454885889)
+
+Being able to specify default argument values in Swift allows you to reduce the number of function overloads in your code. For protocols you need to use an extension and delegate to the version without default values. 🎉 #iosdev #swift
+
+```swift
+protocol ErrorController {
+   func showError(_ error: String, delegate: ErrorViewControllerDelegate?)
+}
+
+extension  ErrorController {
+   func showError(_ error: String, delegate: ErrorViewControllerDelegate? = nil) {
+      showError(error, delegate: delegate)
+   }
+}
+
+class ContactsViewController: UIViewController, ErrorController {
+   func showError(_ error: String, delegate: ErrorViewControllerDelegate?) {
+      print(error)
+   }
+}
+
+let contacts: ErrorController = ContactsViewController()
+contacts.showError("I don't need a delegate.")
+```
+
+[Return to top](https://github.com/lordcodes/lordcodes-dev-tips#lordcodes-development-tips-)
 
 ### [#6 Safely index items within a collection](https://twitter.com/lordcodes/status/1066755201728684032)
 
