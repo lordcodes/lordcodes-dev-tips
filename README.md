@@ -76,9 +76,9 @@ numbers[safe: 10] // nil, no error
 
 [Return to top](https://github.com/lordcodes/lordcodes-dev-tips#lordcodes-development-tips-)
 
-### [#5 Access the call site using Swift special literals](https://twitter.com/lordcodes/status/1065359850262147072)
+### [#5 Access the call site using Swift special literals](https://twitter.com/lordcodes/status/1067159585117614080)
 
-[Twitter](https://twitter.com/lordcodes/status/1065359850262147072)
+[Twitter](https://twitter.com/lordcodes/status/1067159585117614080)
 
 Accessing the call site of a function is surprising simple in Swift, using the special literals: #file, #function and #line. This can be a great help when you want to put assertions within a shared function or print without losing the original context. 🙌
 
