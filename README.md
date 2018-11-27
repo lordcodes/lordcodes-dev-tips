@@ -9,6 +9,14 @@ Each tip will include links back to where it was originally shared [on Twitter](
 
 If you like what I am sharing, please don't hesitate to follow me [on Twitter](https://twitter.com/lordcodes) and check out [my blog](https://www.lordcodes.com).
 
+[Kotlin Tips](https://github.com/lordcodes/lordcodes-dev-tips#kotlin-table-of-contents)
+
+[Swift Tips](https://github.com/lordcodes/lordcodes-dev-tips#swift-table-of-contents)
+
+## Kotlin Table of Contents
+
+[#1 Manage Gradle dependencies using Kotlin code in buildSrc](https://github.com/lordcodes/lordcodes-dev-tips#1-manage-gradle-dependencies-using-kotlin-code-in-buildsrc)
+
 ## Swift Table of Contents
 
 [#7 Protocol function with default values](https://github.com/lordcodes/lordcodes-dev-tips#7-protocol-function-with-default-values)
@@ -24,6 +32,51 @@ If you like what I am sharing, please don't hesitate to follow me [on Twitter](h
 [#2 Using metatype Self to return current type](https://github.com/lordcodes/lordcodes-dev-tips#2-using-metatype-self-to-return-current-type)
 
 [#1 Child view controller constraints within a subview](https://github.com/lordcodes/lordcodes-dev-tips#1-child-view-controller-constraints-within-a-subview)
+
+## Kotlin Tip List
+
+### [#1 Manage Gradle dependencies using Kotlin code in buildSrc](https://twitter.com/lordcodes/status/1067417520393601024)
+
+[Twitter](https://twitter.com/lordcodes/status/1067417520393601024)
+
+Using Kotlin to maintain your Gradle dependencies within buildSrc allows you to use a familiar syntax, gives you auto-complete within Groovy or Kotlin Gradle scripts and allows you to click through to a particular dependencies definition! Sweet 🍭
+
+**→ /buildSrc/src/main/java/com/myapp/Versions.kt**
+```kotlin
+package com.myapp
+
+object Versions {
+  object AndroidX {
+    const val APPCOMPAT = "1.0.2"
+  }
+  const val KOTLIN = "1.3.10"
+  ...
+}
+```
+
+**→ /buildSrc/src/main/java/com/myapp/Libs.kt**
+```kotlin
+package com.myapp
+
+object Libs {
+  object AndroidX {
+    const val APPCOMPAT = "androidx.appcompat:appcompat:${Versions.AndroidX.APPCOMPAT}"
+  }
+  const val KOTLIN_STDLIB = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.KOTLIN}" 
+}
+```
+
+**→ /src/app/build.gradle**
+```groovy
+import com.myapp.Libs
+
+dependencies {
+  implementation Libs.KOTLIN_STDLIB
+  implementation Libs.AndroidX.APPCOMPAT
+}
+```
+
+[Return to top](https://github.com/lordcodes/lordcodes-dev-tips#lordcodes-development-tips-)
 
 ## Swift Tip List
 
