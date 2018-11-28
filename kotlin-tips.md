@@ -10,9 +10,36 @@ You can also check out my [Swift tips](swift-tips.md).
 
 ## Kotlin Table of Contents
 
+[#2 Enable Java 8 compatibility for Kotlin sources](#2-enable-java-8-compatibility-for-kotlin-sources)
+
 [#1 Manage Gradle dependencies using Kotlin code in buildSrc](#1-manage-gradle-dependencies-using-kotlin-code-in-buildsrc)
 
 ## Kotlin Tip List
+
+### [#2 Enable Java 8 compatibility for Kotlin sources](https://twitter.com/lordcodes/status/1067822936093007872)
+
+[Twitter](https://twitter.com/lordcodes/status/1067822936093007872)
+
+Enabling Java 8 compatibility via the compileOptions block only works for Java sources. To do the same for Kotlin you need to use kotlinOptions on any KotlinCompile Gradle tasks. Interesting… 🤔
+
+```groovy
+// For Kotlin
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {  
+    kotlinOptions {  
+        jvmTarget = JavaVersion.VERSION_1_8  
+    }  
+}
+
+// For Java
+android {
+  compileOptions {  
+    sourceCompatibility JavaVersion.VERSION_1_8  
+    targetCompatibility JavaVersion.VERSION_1_8  
+  }
+}
+```
+
+[Return to top](#kotlin-tips-)
 
 ### [#1 Manage Gradle dependencies using Kotlin code in buildSrc](https://twitter.com/lordcodes/status/1067417520393601024)
 

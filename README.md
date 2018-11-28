@@ -16,6 +16,8 @@ If you like what I am sharing, please don't hesitate to follow me [on Twitter](h
 
 ## Kotlin Tips
 
+[#2 Enable Java 8 compatibility for Kotlin sources](kotlin-tips.md#2-enable-java-8-compatibility-for-kotlin-sources)
+
 [#1 Manage Gradle dependencies using Kotlin code in buildSrc](kotlin-tips.md#1-manage-gradle-dependencies-using-kotlin-code-in-buildsrc)
 
 ## Swift Tips
