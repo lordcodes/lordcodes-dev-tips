@@ -10,11 +10,40 @@ You can also check out my [Swift tips](swift-tips.md).
 
 ## Kotlin Table of Contents
 
+[#3 Make the ktlint Gradle task incremental](#3-make-the-ktlint-gradle-task-incremental)
+
 [#2 Enable Java 8 compatibility for Kotlin sources](#2-enable-java-8-compatibility-for-kotlin-sources)
 
 [#1 Manage Gradle dependencies using Kotlin code in buildSrc](#1-manage-gradle-dependencies-using-kotlin-code-in-buildsrc)
 
 ## Kotlin Tip List
+
+### [#3 Make the ktlint Gradle task incremental](https://twitter.com/lordcodes/status/1068119144141328384)
+
+[Twitter](https://twitter.com/lordcodes/status/1068119144141328384)
+
+When setting up ktlint to lint your Kotlin code, you can make the main Gradle task incremental by specifying the inputs and outputs. Really handy to squeeze out that extra bit of performance! 🚄
+
+```groovy
+// Specify the input files and output location
+def inputFiles = fileTree(dir: "src", include: "**/*.kt")  
+def outputDir = "${buildDir}/reports/ktlint/"  
+  
+task ktlint(type: JavaExec, group: "verification") {
+  // Set the inputs and outputs on the task
+  inputs.files(inputFiles)  
+  outputs.dir(outputDir)  
+  
+  // Configure ktlint as normal
+  description = "Check Kotlin code style."  
+  classpath = configurations.ktlint  
+  main = "com.github.shyiko.ktlint.Main"  
+  args "src/**/*.kt", "--reporter=plain", 
+    "--reporter=checkstyle,output=${outputDir}ktlint-checkstyle.xml"  
+}
+```
+
+[Return to top](#kotlin-tips-)
 
 ### [#2 Enable Java 8 compatibility for Kotlin sources](https://twitter.com/lordcodes/status/1067822936093007872)
 
