@@ -24,6 +24,8 @@ If you like what I am sharing, please don't hesitate to follow me [on Twitter](h
 
 ## Swift Tips
 
+[#8 Accessing localised strings from code using SwiftGen](swift-tips.md#8-accessing-localised-strings-from-code-using-swiftgen)
+
 [#7 Protocol function with default values](swift-tips.md#7-protocol-function-with-default-values)
 
 [#6 Safely index items within a collection](swift-tips.md#6-safely-index-items-within-a-collection)
