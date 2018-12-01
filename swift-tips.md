@@ -10,6 +10,8 @@ You can also check out my [Kotlin tips](kotlin-tips.md).
 
 ## Swift Table of Contents
 
+[#8 Accessing localised strings from code using SwiftGen](#8-accessing-localised-strings-from-code-using-swiftgen)
+
 [#7 Protocol function with default values](#7-protocol-function-with-default-values)
 
 [#6 Safely index items within a collection](#6-safely-index-items-within-a-collection)
@@ -26,11 +28,41 @@ You can also check out my [Kotlin tips](kotlin-tips.md).
 
 ## Swift Tip List
 
+### [#8 Accessing localised strings from code using SwiftGen](https://twitter.com/lordcodes/status/1068185329549668352)
+
+[Twitter](https://twitter.com/lordcodes/status/1068185329549668352)
+
+By using SwiftGen, you can easily reference your localized strings from code. The structured template even groups the strings for added readability. Super useful 🔆 https://github.com/SwiftGen/SwiftGen
+
+**SwiftGen config**
+```yaml
+strings:
+ inputs: MyApp/Resources/Base.lproj/Localizable.strings
+ outputs:
+    - templateName: structured-swift4
+      output: Generated/Strings.swift
+```
+
+**Localizable.strings**
+```
+"contacts.add.title" = "Add contact";
+"contacts.add.message" = "Do you want to add this contact?";
+```
+
+**Reference string in code**
+```swift
+UIAlertController(title: L10n.Contacts.Add.title, 
+                  message: L10n.Contacts.Add.message, 
+                  preferredStyle: .alert)
+```
+
+[Return to top](#swift-tips-)
+
 ### [#7 Protocol function with default values](https://twitter.com/lordcodes/status/1067062379454885889)
 
 [Twitter](https://twitter.com/lordcodes/status/1067062379454885889)
 
-Being able to specify default argument values in Swift allows you to reduce the number of function overloads in your code. For protocols you need to use an extension and delegate to the version without default values. 🎉 #iosdev #swift
+Being able to specify default argument values in Swift allows you to reduce the number of function overloads in your code. For protocols you need to use an extension and delegate to the version without default values. 🎉
 
 ```swift
 protocol ErrorController {
