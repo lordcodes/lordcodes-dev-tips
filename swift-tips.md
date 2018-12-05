@@ -10,6 +10,8 @@ You can also check out my [Kotlin tips](kotlin-tips.md).
 
 ## Swift Table of Contents
 
+[#9 Create time intervals with explicit units](#9-create-time-intervals-with-explicit-units)
+
 [#8 Accessing localised strings from code using SwiftGen](#8-accessing-localised-strings-from-code-using-swiftgen)
 
 [#7 Protocol function with default values](#7-protocol-function-with-default-values)
@@ -27,6 +29,41 @@ You can also check out my [Kotlin tips](kotlin-tips.md).
 [#1 Child view controller constraints within a subview](#1-child-view-controller-constraints-within-a-subview)
 
 ## Swift Tip List
+
+
+### [#9 Create time intervals with explicit units](https://twitter.com/lordcodes/status/1069931078129991681)
+
+[Twitter](https://twitter.com/lordcodes/status/1069931078129991681)
+
+In Swift, I really like that many APIs take in a `TimeInterval` instead of just a `Double`, but you either need to know they are in seconds or do a conversion. I prefer to add functions that provide them with explicit units. It makes for a very readable call site! 👍
+
+```swift
+extension TimeInterval {
+  // Hide the calculations from the call site
+  private static var secondsPerHour: Double { return 60 * 60 }
+  private static var secondsPerMinute: Double { return 60 }
+
+  // Functions to provide time intervals with explicit units
+  static func hours(_ value: Double) -> TimeInterval {
+    return value * secondsPerHour
+  }
+
+  static func minutes(_ value: Double) -> TimeInterval {
+    return value * secondsPerMinute
+  }
+
+  static func seconds(_ value: Double) -> TimeInterval {
+    return value
+  }
+}
+
+// They make very readable call sites
+TimeInterval.hours(3)
+TimeInterval.minutes(46)
+TimeInterval.seconds(35)
+```
+
+[Return to top](#swift-tips-)
 
 ### [#8 Accessing localised strings from code using SwiftGen](https://twitter.com/lordcodes/status/1068185329549668352)
 
