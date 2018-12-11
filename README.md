@@ -24,6 +24,10 @@ If you like what I am sharing, please don't hesitate to follow me [on Twitter](h
 
 ## Swift Tips
 
+[#11 Match parent's constraints](swift-tips.md#11-match-parents-constraints)
+
+[#10 Animating view colour changes](swift-tips.md#10-animating-view-colour-changes)
+
 [#9 Create time intervals with explicit units](swift-tips.md#9-create-time-intervals-with-explicit-units)
 
 [#8 Accessing localised strings from code using SwiftGen](swift-tips.md#8-accessing-localised-strings-from-code-using-swiftgen)
