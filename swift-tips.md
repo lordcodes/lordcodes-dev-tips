@@ -10,6 +10,10 @@ You can also check out my [Kotlin tips](kotlin-tips.md).
 
 ## Swift Table of Contents
 
+[#11 Match parent's constraints](#11-match-parents-constraints)
+
+[#10 Animating view colour changes](#10-animating-view-colour-changes)
+
 [#9 Create time intervals with explicit units](#9-create-time-intervals-with-explicit-units)
 
 [#8 Accessing localised strings from code using SwiftGen](#8-accessing-localised-strings-from-code-using-swiftgen)
@@ -30,6 +34,46 @@ You can also check out my [Kotlin tips](kotlin-tips.md).
 
 ## Swift Tip List
 
+### [#11 Match parent's constraints](https://twitter.com/lordcodes/status/1070965895093211137)
+
+[Twitter](https://twitter.com/lordcodes/status/1070965895093211137)
+
+I love Swift extensions! One I use a lot when working with AutoLayout, is making a child view fill its superview using constraints, sometimes with insets between them. This also comes in handy when adding a child view controller within a subview of the parent view controller. 👍
+
+```swift
+extension UIView {
+  func attachAnchors(to view: UIView, with insets: UIEdgeInsets = .zero) {
+    NSLayoutConstraint.activate([
+      topAnchor.constraint(equalTo: view.topAnchor, constant: insets.top),
+      rightAnchor.constraint(equalTo: view.rightAnchor, constant: -insets.right),
+      bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -insets.bottom),
+      leftAnchor.constraint(equalTo: view.leftAnchor, constant: insets.left)
+    ])
+  }
+}
+```
+
+[Return to top](#swift-tips-)
+
+### [#10 Animating view colour changes](https://twitter.com/lordcodes/status/1070775143042043904)
+
+[Twitter](https://twitter.com/lordcodes/status/1070775143042043904)
+
+When animating cells being added to a `UICollectionView`, I noticed that text and background colours didn't animate when using a `UIView.animate` block. Switching to `UIView.transition`, allowed the colours to animate perfectly! 🎉
+
+```swift
+UIView.transition(with: commentContainer, duration: 0.6, 
+                  options: .transitionCrossDissolve, animations: {
+  commentContainer.backgroundColor = UIColor(red: 17, green: 215, blue: 198)
+})
+
+UIView.transition(with: commentLabel, duration: 0.6, 
+                  options: .transitionCrossDissolve, animations: {
+  commentLabel.textColor = UIColor(red: 143, green: 155, blue: 174)
+})
+```
+
+[Return to top](#swift-tips-)
 
 ### [#9 Create time intervals with explicit units](https://twitter.com/lordcodes/status/1069931078129991681)
 
