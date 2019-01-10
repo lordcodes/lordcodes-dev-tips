@@ -10,6 +10,8 @@ You can also check out my [Kotlin tips](kotlin-tips.md).
 
 ## Swift Table of Contents
 
+[#12 Map the keys of a dictionary to a different type](#12-map-the-keys-of-a-dictionary-to-a-different-type)
+
 [#11 Match parent's constraints](#11-match-parents-constraints)
 
 [#10 Animating view colour changes](#10-animating-view-colour-changes)
@@ -33,6 +35,27 @@ You can also check out my [Kotlin tips](kotlin-tips.md).
 [#1 Child view controller constraints within a subview](#1-child-view-controller-constraints-within-a-subview)
 
 ## Swift Tip List
+
+### [#12 Map the keys of a dictionary to a different type](https://twitter.com/lordcodes/status/1073311853667868672)
+
+[Twitter](https://twitter.com/lordcodes/status/1073311853667868672)
+
+When working on some analytics code I needed to map the keys in a dictionary to a different type and found no function existed on Dictionary to do this. This neat little extension will give you just that! 👊
+
+```swift
+extension Dictionary {
+  func mapKeys<NewKeyT>(_ transform: (Key) throws -> NewKeyT) rethrows -> [NewKeyT: Value] {
+    var newDictionary = [NewKeyT: Value]()
+    try forEach { key, value in
+        let newKey = try transform(key)
+        newDictionary[newKey] = value
+    }
+    return newDictionary
+  }
+}
+```
+
+[Return to top](#swift-tips-)
 
 ### [#11 Match parent's constraints](https://twitter.com/lordcodes/status/1070965895093211137)
 
