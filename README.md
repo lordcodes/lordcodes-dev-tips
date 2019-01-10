@@ -24,6 +24,8 @@ If you like what I am sharing, please don't hesitate to follow me [on Twitter](h
 
 ## Swift Tips
 
+[#12 Map the keys of a dictionary to a different type](swift-tips.md#12-map-the-keys-of-a-dictionary-to-a-different-type)
+
 [#11 Match parent's constraints](swift-tips.md#11-match-parents-constraints)
 
 [#10 Animating view colour changes](swift-tips.md#10-animating-view-colour-changes)
