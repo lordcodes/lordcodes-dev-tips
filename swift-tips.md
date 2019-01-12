@@ -10,6 +10,8 @@ You can also check out my [Kotlin tips](kotlin-tips.md).
 
 ## Swift Table of Contents
 
+[#13 Simpler categories using os_log](#13-simpler-categories-using-os-log)
+
 [#12 Map the keys of a dictionary to a different type](#12-map-the-keys-of-a-dictionary-to-a-different-type)
 
 [#11 Match parent's constraints](#11-match-parents-constraints)
@@ -35,6 +37,26 @@ You can also check out my [Kotlin tips](kotlin-tips.md).
 [#1 Child view controller constraints within a subview](#1-child-view-controller-constraints-within-a-subview)
 
 ## Swift Tip List
+
+### [#13 Simpler categories using os_log](https://twitter.com/lordcodes/status/1083458719655047170)
+
+[Twitter](https://twitter.com/lordcodes/status/1083458719655047170)
+
+Organised logging in Swift that can be searched is easy thanks to `os_log`. By storing your categories as an `OSLog` extension, you can access them using a nice shorthand syntax. I find this makes categories easier to specify! 🎉
+
+```swift
+extension OSLog {
+  static let logAuthentication = OSLog(subsystem: "com.myapp.App", category: "Auth")
+  static let logDatabase = OSLog(subsystem: "com.myapp.App", category: "Database")
+  static let logNetwork = OSLog(subsystem: "com.myapp.App", category: "Network")
+}
+
+os_log("User signed in: %@", log: .logAuthentication, type: .default, email)
+os_log("Chat messages sync complete", log: .logNetwork, type: .info)
+os_log("Chat messages saved successfully", log: .logDatabase, type: .debug)
+```
+
+[Return to top](#swift-tips-)
 
 ### [#12 Map the keys of a dictionary to a different type](https://twitter.com/lordcodes/status/1073311853667868672)
 
