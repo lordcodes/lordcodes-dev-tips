@@ -10,7 +10,7 @@ You can also check out my [Kotlin tips](kotlin-tips.md).
 
 ## Swift Table of Contents
 
-[#13 Simpler categories using os_log](#13-simpler-categories-using-os-log)
+[#13 Simpler categories using os_log](#13-simpler-categories-using-os_log)
 
 [#12 Map the keys of a dictionary to a different type](#12-map-the-keys-of-a-dictionary-to-a-different-type)
 
