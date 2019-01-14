@@ -10,6 +10,8 @@ You can also check out my [Kotlin tips](kotlin-tips.md).
 
 ## Swift Table of Contents
 
+[#14 Ignore nil elements in an RxSwift observable stream](#14-ignore-nil-elements-in-an-rxswift-observable-stream)
+
 [#13 Simpler categories using os_log](#13-simpler-categories-using-os_log)
 
 [#12 Map the keys of a dictionary to a different type](#12-map-the-keys-of-a-dictionary-to-a-different-type)
@@ -37,6 +39,22 @@ You can also check out my [Kotlin tips](kotlin-tips.md).
 [#1 Child view controller constraints within a subview](#1-child-view-controller-constraints-within-a-subview)
 
 ## Swift Tip List
+
+### [#14 Ignore nil elements in an RxSwift observable stream](https://twitter.com/lordcodes/status/1084183242301997056)
+
+[Twitter](https://twitter.com/lordcodes/status/1084183242301997056)
+
+When working with RxSwift, I find myself regularly wanting to ignore nil elements. This handy extension uses filter so that nil elements are simply skipped. It helps to avoid the nils propagating any further. ✋
+
+```swift
+extension ObservableType {
+    func ignoreNil<T>() -> Observable<T> where E == T? {
+        return filter { $0 != nil }.map { $0! }
+    }
+}
+```
+
+[Return to top](#swift-tips-)
 
 ### [#13 Simpler categories using os_log](https://twitter.com/lordcodes/status/1083458719655047170)
 
