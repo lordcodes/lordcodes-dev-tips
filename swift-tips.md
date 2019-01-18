@@ -10,6 +10,8 @@ You can also check out my [Kotlin tips](kotlin-tips.md).
 
 ## Swift Table of Contents
 
+[#15 Dealing with file extensions and Uniform Type Identifiers](#15-dealing-with-file-extensions-and-uniform-type-identifiers)
+
 [#14 Ignore nil elements in an RxSwift observable stream](#14-ignore-nil-elements-in-an-rxswift-observable-stream)
 
 [#13 Simpler categories using os_log](#13-simpler-categories-using-os_log)
