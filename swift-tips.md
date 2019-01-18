@@ -40,6 +40,33 @@ You can also check out my [Kotlin tips](kotlin-tips.md).
 
 ## Swift Tip List
 
+### [#15 Dealing with file extensions and Uniform Type Identifiers](https://twitter.com/lordcodes/status/1086186193748926465)
+
+[Twitter](https://twitter.com/lordcodes/status/1086186193748926465)
+
+When implementing a file upload feature and working with UIDocumentPickerViewController, it became necessary to convert between file extensions from the API and Uniform Type Identifiers in the UIKit APIs. I like to create types for them so that it is clear when a file extension is required vs a type identifier. 👍
+
+```swift
+struct FileExtension {
+    let rawValue: String
+
+    func asTypeIdentifier() -> TypeIdentifier {
+        let identifierCreated = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension,
+                                                                      rawValue as NSString, nil)
+        if let typeIdentifier = identifierCreated?.takeRetainedValue() {
+            return TypeIdentifier(rawValue: typeIdentifier as String)
+        }
+        return TypeIdentifier(rawValue: "public.data")
+    }
+}
+
+struct TypeIdentifier {
+    let rawValue: String
+}
+```
+
+[Return to top](#swift-tips-)
+
 ### [#14 Ignore nil elements in an RxSwift observable stream](https://twitter.com/lordcodes/status/1084183242301997056)
 
 [Twitter](https://twitter.com/lordcodes/status/1084183242301997056)
