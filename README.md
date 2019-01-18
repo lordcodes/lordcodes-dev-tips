@@ -24,6 +24,8 @@ If you like what I am sharing, please don't hesitate to follow me [on Twitter](h
 
 ## Swift Tips
 
+[#15 Dealing with file extensions and Uniform Type Identifiers](swift-tips.md#15-dealing-with-file-extensions-and-uniform-type-identifiers)
+
 [#14 Ignore nil elements in an RxSwift Observable stream](swift-tips.md#14-ignore-nil-elements-in-an-rxswift-observable-stream)
 
 [#13 Simpler categories using os_log](swift-tips.md#13-simpler-categories-using-os_log)
