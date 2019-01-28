@@ -10,6 +10,8 @@ You can also check out my [Swift tips](swift-tips.md).
 
 ## Kotlin Table of Contents
 
+[#4 Set up Kotlin sources in src/main/kotlin from Gradle Kotlin DSL](#4)
+
 [#3 Make the ktlint Gradle task incremental](#3-make-the-ktlint-gradle-task-incremental)
 
 [#2 Enable Java 8 compatibility for Kotlin sources](#2-enable-java-8-compatibility-for-kotlin-sources)
@@ -17,6 +19,22 @@ You can also check out my [Swift tips](swift-tips.md).
 [#1 Manage Gradle dependencies using Kotlin code in buildSrc](#1-manage-gradle-dependencies-using-kotlin-code-in-buildsrc)
 
 ## Kotlin Tip List
+
+### [#4 Set up Kotlin sources in src/main/kotlin from Gradle Kotlin DSL](https://twitter.com/lordcodes/status/1087031040009531394)
+
+[Twitter](https://twitter.com/lordcodes/status/1087031040009531394)
+
+When converting my Android Gradle files to Kotlin, one part that wasn't clear was how to keep sources within src/main/kotlin instead of java. It turns out you just need to get the source-set by name and make `srcDirs` a function call. Works like a dream! 🛠
+
+```kotlin
+sourceSets {
+    getByName("main").java.srcDirs("src/main/kotlin")
+    getByName("test").java.srcDirs("src/test/kotlin")
+    getByName("androidTest").java.srcDirs("src/androidTest/kotlin")
+}
+```
+
+[Return to top](#kotlin-tips-)
 
 ### [#3 Make the ktlint Gradle task incremental](https://twitter.com/lordcodes/status/1068119144141328384)
 
