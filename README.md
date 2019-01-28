@@ -16,6 +16,8 @@ If you like what I am sharing, please don't hesitate to follow me [on Twitter](h
 
 ## Kotlin Tips
 
+[#4 Set up Kotlin sources in src/main/kotlin from Gradle Kotlin DSL](kotlin-tips.md#4-set-up-kotlin-sources-in-srcmainkotlin-from-gradle-kotlin-dsl)
+
 [#3 Make the ktlint Gradle task incremental](kotlin-tips.md#3-make-the-ktlint-gradle-task-incremental)
 
 [#2 Enable Java 8 compatibility for Kotlin sources](kotlin-tips.md#2-enable-java-8-compatibility-for-kotlin-sources)
