@@ -10,6 +10,8 @@ You can also check out my [Swift tips](swift-tips.md).
 
 ## Kotlin Table of Contents
 
+[#5 Android signing key-store details from Gradle properties](#5-android-signing-key-store-details-from-gradle-properties)
+
 [#4 Set up Kotlin sources in src/main/kotlin from Gradle Kotlin DSL](#4-set-up-kotlin-sources-in-srcmainkotlin-from-gradle-kotlin-dsl)
 
 [#3 Make the ktlint Gradle task incremental](#3-make-the-ktlint-gradle-task-incremental)
@@ -19,6 +21,39 @@ You can also check out my [Swift tips](swift-tips.md).
 [#1 Manage Gradle dependencies using Kotlin code in buildSrc](#1-manage-gradle-dependencies-using-kotlin-code-in-buildsrc)
 
 ## Kotlin Tip List
+
+### [#5 Android signing key-store details from Gradle properties](https://twitter.com/lordcodes/status/1089494738582016001)
+
+[Twitter](https://twitter.com/lordcodes/status/1089494738582016001)
+
+You may want to keep your Android project key-store details out of source code and Git, instead passing them in. Aided by a handy function in buildSrc, these can be referenced from Gradle in Groovy or Kotlin. 🚀
+
+```kotlin
+// buildSrc/src/main/kotlin/Extensions.kt
+import org.gradle.api.Project
+
+fun Project.propertyOrEmpty(name: String): String {
+    return findProperty(name) as String? ?: ""
+}
+
+// app/build.gradle.kts
+android {
+  signingConfigs {
+    create("upload") {
+      storeFile = file("upload.keystore")
+      storePassword = propertyOrEmpty("UPLOAD_STORE_PASSWORD")
+      keyAlias = "keyname"
+      keyPassword = propertyOrEmpty("UPLOAD_KEY_PASSWORD")
+    }
+  }
+}
+
+// local.properties
+UPLOAD_STORE_PASSWORD=storePassword
+UPLOAD_KEY_PASSWORD=keyPassword
+```
+
+[Return to top](#kotlin-tips-)
 
 ### [#4 Set up Kotlin sources in src/main/kotlin from Gradle Kotlin DSL](https://twitter.com/lordcodes/status/1087031040009531394)
 
