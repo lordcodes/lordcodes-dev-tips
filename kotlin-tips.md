@@ -10,7 +10,7 @@ You can also check out my [Swift tips](swift-tips.md).
 
 ## Kotlin Table of Contents
 
-[#4 Set up Kotlin sources in src/main/kotlin from Gradle Kotlin DSL](#4)
+[#4 Set up Kotlin sources in src/main/kotlin from Gradle Kotlin DSL](#4-set-up-kotlin-sources-in-srcmainkotlin-from-gradle-kotlin-dsl)
 
 [#3 Make the ktlint Gradle task incremental](#3-make-the-ktlint-gradle-task-incremental)
 
