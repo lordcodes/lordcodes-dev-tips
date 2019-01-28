@@ -16,6 +16,8 @@ If you like what I am sharing, please don't hesitate to follow me [on Twitter](h
 
 ## Kotlin Tips
 
+[#5 Android signing key-store details from Gradle properties](kotlin-tips.md#5-android-signing-key-store-details-from-gradle-properties)
+
 [#4 Set up Kotlin sources in src/main/kotlin from Gradle Kotlin DSL](kotlin-tips.md#4-set-up-kotlin-sources-in-srcmainkotlin-from-gradle-kotlin-dsl)
 
 [#3 Make the ktlint Gradle task incremental](kotlin-tips.md#3-make-the-ktlint-gradle-task-incremental)
